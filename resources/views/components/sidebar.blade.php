@@ -11,10 +11,12 @@
                 <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
             <li class="dropdown">
-                <a href="index.html" class="nav-link"><i data-feather="home"></i><span>Company</span></a>
+                <a href="{{ route('company.index') }}" class="nav-link"><i
+                        data-feather="home"></i><span>Company</span></a>
             </li>
             <li class="dropdown">
-                <a href="index.html" class="nav-link"><i data-feather="grid"></i><span>Category</span></a>
+                <a href="{{ route('category.index') }}" class="nav-link"><i
+                        data-feather="grid"></i><span>Category</span></a>
             </li>
             <li class="dropdown">
                 <a href="index.html" class="nav-link"><i data-feather="tv"></i><span>Post</span></a>
