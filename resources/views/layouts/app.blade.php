@@ -48,12 +48,16 @@
     <title>Otika - Admin Dashboard Template</title>
     <!-- General CSS Files -->
     <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="/assets/bundles/summernote/summernote-bs4.css">
     <!-- Template CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/components.css">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="/assets/css/custom.css">
     <link rel='shortcut icon' type='image/x-icon' href='/assets/img/favicon.ico' />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -248,16 +252,30 @@
             </footer>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- General JS Scripts -->
     <script src="/assets/js/app.min.js"></script>
     <!-- JS Libraies -->
     <script src="/assets/bundles/apexcharts/apexcharts.min.js"></script>
+    <script src="/assets/bundles/summernote/summernote-bs4.js"></script>
     <!-- Page Specific JS File -->
     <script src="/assets/js/page/index.js"></script>
     <!-- Template JS File -->
     <script src="/assets/js/scripts.js"></script>
     <!-- Custom JS File -->
     <script src="/assets/js/custom.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2({
+                theme: "classic"
+            });
+        });
+    </script>
 </body>
 
 

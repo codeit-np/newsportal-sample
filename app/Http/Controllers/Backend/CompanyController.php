@@ -36,12 +36,7 @@ class CompanyController extends Controller
         $company->pan = $request->pan;
         $company->email = $request->email;
 
-        if ($request->hasFile('image')) {
-            $file = $request->image;
-            $newName = time() . "." . $file->getClientOriginalExtension();
-            $file->move("images", $newName);
-            $company->logo = "images/$newName";
-        }
+        uploadImage($request, $company);
         $company->save();
         return redirect()->route('company.index');
     }
@@ -74,12 +69,8 @@ class CompanyController extends Controller
         $company->pan = $request->pan;
         $company->email = $request->email;
 
-        if ($request->hasFile('image')) {
-            $file = $request->image;
-            $newName = time() . "." . $file->getClientOriginalExtension();
-            $file->move("image", $newName);
-            $company->logo = "image/$newName";
-        }
+        uploadImage($request, $company);
+
         $company->update();
         return redirect()->route('company.index');
     }

@@ -21,7 +21,7 @@
                     <tr>
                         <td>{{ $thal->id }}</td>
                         <td>
-                            <img src="{{ asset($thal->logo) }}" width="100" alt="">
+                            <img src="{{ asset($thal->image) }}" width="100" alt="">
                         </td>
                         <td>{{ $thal->name }}</td>
                         <td>{{ $thal->address }}</td>

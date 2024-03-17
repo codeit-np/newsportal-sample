@@ -1,8 +1,9 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html"> <img alt="image" src="/assets/img/logo.png" class="header-logo" />
-                <span class="logo-name">Admin</span>
+            <a href="index.html"> <img alt="image" src="https://codeit.com.np/storage/01HP6N4V2477SGGDJ4QH4PHN39.webp"
+                    class="header-logo" />
+
             </a>
         </div>
         <ul class="sidebar-menu">
@@ -19,7 +20,7 @@
                         data-feather="grid"></i><span>Category</span></a>
             </li>
             <li class="dropdown">
-                <a href="index.html" class="nav-link"><i data-feather="tv"></i><span>Post</span></a>
+                <a href="{{ route('post.index') }}" class="nav-link"><i data-feather="tv"></i><span>Post</span></a>
             </li>
 
         </ul>
