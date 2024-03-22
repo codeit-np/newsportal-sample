@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CompanyController;
+use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\ProfileController;
@@ -24,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('company', CompanyController::class)->names('company');
     Route::resource('category', CategoryController::class)->names('category');
     Route::resource('post', PostController::class)->names('post');
+    Route::resource('customer', CustomerController::class)->names('customer');
 });
 
 require __DIR__ . '/auth.php';
