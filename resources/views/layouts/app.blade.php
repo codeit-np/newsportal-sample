@@ -112,8 +112,8 @@
                                 </a> <a href="#" class="dropdown-item"> <span
                                         class="dropdown-item-avatar text-white">
                                         <img alt="image" src="/assets/img/users/user-2.png" class="rounded-circle">
-                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
-                                            Smith</span> <span class="time messege-text">Request for leave
+                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Rajesh
+                                            Hamal</span> <span class="time messege-text">Request for leave
                                             application</span>
                                         <span class="time">5 Min Ago</span>
                                     </span>
@@ -219,7 +219,7 @@
                                 src="/assets/img/user.png" class="user-img-radious-style"> <span
                                 class="d-sm-none d-lg-inline-block"></span></a>
                         <div class="dropdown-menu dropdown-menu-right pullDown">
-                            <div class="dropdown-title">Hello Sarah Smith</div>
+                            <div class="dropdown-title">Hello {{ Auth::user()->name }}</div>
                             <a href="profile.html" class="dropdown-item has-icon"> <i
                                     class="far
 										fa-user"></i> Profile
@@ -229,10 +229,19 @@
                                 Settings
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i
+                            {{-- <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i
                                     class="fas fa-sign-out-alt"></i>
                                 Logout
-                            </a>
+                            </a> --}}
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+
+                                <x-responsive-nav-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </x-responsive-nav-link>
+                            </form>
                         </div>
                     </li>
                 </ul>

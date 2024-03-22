@@ -13,8 +13,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $thal = Company::first();
-        return view('backend.company.index', compact('thal'));
+
+        $company = Company::first();
+        return view('backend.company.index', compact('company'));
     }
 
     /**
@@ -22,7 +23,12 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('backend.company.create');
+        $company = Company::first();
+        if (empty($company)) {
+            return view('backend.company.create');
+        } else {
+            return redirect()->route('company.index');
+        }
     }
 
     /**

@@ -36,6 +36,8 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->description = $request->description;
         $post->tags = $request->tags;
+        $post->meta_keyword = $request->meta_keyword;
+        $post->meta_description = $request->meta_description;
         uploadImage($request, $post);
         $post->save();
 

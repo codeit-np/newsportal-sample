@@ -6,18 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class PageLayout extends Component
+class Sajal extends Component
 {
     /**
      * Create a new component instance.
      */
-    public $metaKeyword;
-    public $metaDescription;
-
-    public function __construct($metaKeyword, $metaDescription)
+    public function __construct()
     {
-        $this->metaKeyword = $metaKeyword;
-        $this->metaDescription = $metaDescription;
+        //
     }
 
     /**
@@ -25,6 +21,6 @@ class PageLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.page-layout');
+        return view('components.sajal');
     }
 }

@@ -1,5 +1,7 @@
-<x-page-layout>
+<x-page-layout metaKeyword="{{ $seo->meta_keyword }}" metaDescription="{{ $seo->meta_description }}">
     <!-- Latest 1 News -->
+
+
     <section>
         <div class="container m-auto">
             @foreach ($topNews as $news)
@@ -15,7 +17,8 @@
     <!-- News By Categories -->
 
     <section>
-        <div class="grid grid-cols-6">
+        <h1>Total Views {{ $totalViews }}</h1>
+        <div class="container m-auto grid grid-cols-6">
             <section class="col-span-4">
                 <div>
                     @foreach ($menus as $category)
@@ -27,7 +30,9 @@
                             @foreach ($category->posts as $post)
                                 <div>
                                     <div class="h-40">
-                                        <img src="{{ asset($post->image) }}" class="w-full h-full" alt="">
+                                        <a href="{{ route('news', $post->id) }}">
+                                            <img src="{{ asset($post->image) }}" class="w-full h-full" alt="">
+                                        </a>
                                     </div>
                                     <div>
                                         <h5 class="font-bold">{{ $post->title }}</h5>

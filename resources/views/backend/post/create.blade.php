@@ -23,6 +23,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="meta_keyword">Meta Keywords (Optional)</label>
+                    <input id="meta_keyword" class="form-control" type="text" name="meta_keyword">
+                </div>
+
+                <div class="form-group">
+                    <label for="meta_description">Meta Description (Optional)</label>
+                    <textarea id="meta_description" class="form-control" name="meta_description" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
                     <label for="category">Select Categories</label>
                     <select id="category" class="form-control select2" name="category[]" multiple>
                         @foreach ($categories as $category)

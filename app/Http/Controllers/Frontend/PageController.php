@@ -13,7 +13,9 @@ class PageController extends BaseController
     {
         // Get Top 1 News
         $topNews = Post::latest()->limit(1)->get();
-        return view('frontend.home', compact('topNews'));
+        $tending = Post::orderBy('views', 'desc')->limit(2)->get();
+        $totalViews = Post::avg('views');
+        return view('frontend.home', compact('topNews', 'tending', 'totalViews'));
     }
 
 
@@ -24,7 +26,10 @@ class PageController extends BaseController
     }
 
 
-    function news()
+    function post($id)
     {
+        $post = Post::find($id);
+        $post->increment('views');
+        return view('frontend.post', compact('post'));
     }
 }

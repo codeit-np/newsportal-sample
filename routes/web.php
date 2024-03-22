@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Schedule;
 
 Route::get('/', [PageController::class, "home"])->name('home');
 Route::get('/category/{slug}', [PageController::class, "newByCategories"])->name('category');
+Route::get("/news/{id}", [PageController::class, 'post'])->name('news');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
